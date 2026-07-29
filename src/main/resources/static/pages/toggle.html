@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spring-Boot Beginner</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
 </head>
 
 <body>
@@ -15,16 +15,18 @@
         <a href="/pages/toggle.html">Toggle</a>
         <a href="/pages/randomUser.html">Random User</a>
     </div>
-
     <div class="card">
-        <img src="/images/jane.png" alt="User Image">
-        <h1>Jane</h1>
-        <h2>Female</h2>
+        <img id="userImage" src="/images/jane.png" alt="User Image">
+        <h1 id="userName">Jane</h1>
+        <h2 id="userGender">Female</h2>
+
+        <button onclick="toggleUser()">Toggle</button>
     </div>
 
 
-    <script src="index.js"></script>
 
+
+    <script src="../index.js"></script>
 </body>
 
 </html>

@@ -1,3 +1,63 @@
-h1{
+.navbar {
+    border-width: 2px;
+    border-color: beige;
+    border-style: solid;
+    padding: 20px;
+    text-align: center;
+    background-color: whitesmoke
+}
+
+.navbar a {
+    padding: 25px;
+    text-decoration: none;
+    color: grey;
+    font-size: large;
+    font-weight: bold;
+
+}
+
+.navbar a:hover {
+    color: black;
+}
+
+body {
+    margin: 0px;
+    background-color: #0f172a;
+
+}
+
+.card {
+    border: 2px solid grey;
+    background-color: aliceblue;
+    width: 300px;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.card h1 {
+    margin-top: 0;
+    padding-top: 10px;
     color: chocolate;
+}
+
+
+.card img {
+    width: 100%;
+}
+
+
+.card button {
+
+    margin-bottom: 10px;
+    padding: 8px;
+    box-shadow: goldenrod;
+    border-radius: 10px;
+    font-weight: bold;
+    border-color: goldenrod;
+    cursor: pointer;
+
 }
