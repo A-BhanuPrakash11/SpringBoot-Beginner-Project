@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.Spring_Projects.SpringBoot_Beginner.models.User;
@@ -24,13 +23,14 @@ public class UserService {
         return allUsers;
     }
 
-    public ResponseEntity<User> myRandomUser() {
-        User temp = allUsers.get(nextId);
+    public User myRandomUser() {
+        if (allUsers.size() == 0)
+            return null;
 
-        if (temp != null)
-            return ResponseEntity.ok(temp);
+        Random rand = new Random();
+        int randid = rand.nextInt(allUsers.size());
 
-        return ResponseEntity.notFound().build();
+        return allUsers.get(randid);
     }
 
     public User getUserById(int id) {

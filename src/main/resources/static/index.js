@@ -52,3 +52,26 @@ function randomUser() {
 
 
 }
+
+function myRandomUser() {
+    console.log("function called successfully");
+    fetch("/api/users/random")
+        .then(function (response) {
+            return response.json();
+
+        })
+        .then(function (response) {
+
+            var userImage = document.getElementById("user-Image");
+            var userName = document.getElementById("user-Name");
+            var userGender = document.getElementById("user-Gender");
+
+            userImage.src = response.image;
+            userName.innerHTML = response.name;
+            userGender.innerHTML = response.gender;
+
+        })
+
+
+
+}
