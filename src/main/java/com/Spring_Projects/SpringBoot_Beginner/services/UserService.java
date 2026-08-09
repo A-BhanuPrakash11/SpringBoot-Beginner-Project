@@ -2,7 +2,9 @@ package com.Spring_Projects.SpringBoot_Beginner.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.Spring_Projects.SpringBoot_Beginner.models.User;
@@ -20,6 +22,15 @@ public class UserService {
 
     public List<User> getAllUsers() {
         return allUsers;
+    }
+
+    public ResponseEntity<User> myRandomUser() {
+        User temp = allUsers.get(nextId);
+
+        if (temp != null)
+            return ResponseEntity.ok(temp);
+
+        return ResponseEntity.notFound().build();
     }
 
     public User getUserById(int id) {
@@ -61,5 +72,15 @@ public class UserService {
         }
         return false;
 
+    }
+
+    public User randomUser() {
+        if (allUsers.size() == 0)
+            return null;
+
+        Random rand = new Random();
+        int randid = rand.nextInt(allUsers.size());
+
+        return allUsers.get(randid);
     }
 }
